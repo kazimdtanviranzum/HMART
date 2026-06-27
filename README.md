@@ -40,21 +40,6 @@ HMART/
   experiments section (mean and standard deviation over 20 seeds for the dynamic experiments).
 - **`data/neural_eval.json`** — the metrics of the trained policy reported in Table 2 and Table 9.
 
-## Before the repository is made public — files to add
-
-The paper (Appendix C) describes a small set of scripts that together reproduce every result.
-`src/neural.py` imports the simulator with `from sim import ...`, so the simulator module is
-required for the training code to run. Please add the following files to `src/` before publishing:
-
-- `sim.py` — the discrete-event hospital simulator (builds the hospital graph, generates
-  requests, runs each policy, and records the metrics; exposes `Hospital`,
-  `generate_requests`, `simulate`, `cvar`, `CLASSES`).
-- `exact.py` — the exact mixed-integer program for the static case (Section 6.1).
-- `experiments.py` — the driver that runs all methods and writes `data/results.json`.
-- `figures.py` — the script that produces the figures from the result data.
-
-Once these are added, the repository will contain the full pipeline referenced in the paper.
-
 ## Requirements
 
 ```bash
